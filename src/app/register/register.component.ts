@@ -41,6 +41,7 @@ export class RegisterComponent implements OnInit {
           this.zipcode = '';
 
           alert('success');
+          window.location.reload();
         },
         async (error) => {
           alert('Error. Try again later.')
