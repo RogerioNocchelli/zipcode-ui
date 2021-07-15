@@ -1,0 +1,24 @@
+<div class="justify-center">
+    <mat-form-field appearance="outline" class="margin-input">
+        <mat-label>City</mat-label>
+        <input [(ngModel)]="city" matInput placeholder="Enter city name" required>
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="margin-input">
+        <mat-label>Zip code</mat-label>
+        <input [(ngModel)]="zipcode" matInput placeholder="Enter zip code" type="celphone" mask="000-000" required>
+        <mat-hint>min 100000 - max 999999</mat-hint>
+    </mat-form-field>
+</div>
+
+<div class="justify-center">
+    <mat-hint *ngIf="inputError" style="color: red; margin: 5px;">Incorrect or missing information.</mat-hint>
+</div>
+
+<div class="justify-center">
+    <button *ngIf="!spinner" (click)="registerZipcode()" mat-stroked-button color="primary">Save</button>
+    <mat-spinner *ngIf="spinner" ></mat-spinner>
+</div>
+
+
