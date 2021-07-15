@@ -34,17 +34,16 @@ export class RegisterComponent implements OnInit {
     } else {
       this.inputError = false;
 
-      console.log(this.city);
-      console.log(this.zipcode);
-
-
       this.zipcodeService.save(this.city, this.zipcode)
       .subscribe (
         async (data)=> {
-          console.log(data)
+          this.city = '';
+          this.zipcode = '';
+
+          alert('success');
         },
         async (error) => {
-         console.log(error)
+          alert('Error. Try again later.')
         }
       )
     }

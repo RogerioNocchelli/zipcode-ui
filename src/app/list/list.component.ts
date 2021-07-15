@@ -21,10 +21,9 @@ export class ListComponent implements OnInit {
     .subscribe (
       async (data)=> {
         this.dataSource = data;
-        console.log(this.dataSource)
       },
       async (error) => {
-       console.log(error)
+       alert(error)
       }
     )
   }
